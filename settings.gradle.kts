@@ -1,3 +1,6 @@
-rootProject.name = "menty"
+pluginManagement {
+    includeBuild("build-logic")
+}
 
-include(":services:menty")
+rootProject.name = "menty"
+include("poll", "config-server")
