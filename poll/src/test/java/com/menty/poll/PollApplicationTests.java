@@ -1,10 +1,10 @@
-package com.menty.menty;
+package com.menty.poll;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MentyApplicationTests {
+class PollApplicationTests {
 
 	@Test
 	void contextLoads() {
