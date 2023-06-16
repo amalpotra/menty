@@ -3,4 +3,4 @@ pluginManagement {
 }
 
 rootProject.name = "menty"
-include("poll", "config-server")
+include("poll", "config")

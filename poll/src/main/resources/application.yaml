@@ -1,4 +1,5 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /poll
+spring:
+  application:
+    name: poll
+  config:
+    import: configserver:http://localhost:8888
