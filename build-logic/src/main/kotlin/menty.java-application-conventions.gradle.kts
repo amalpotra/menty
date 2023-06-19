@@ -4,3 +4,12 @@ plugins {
 
     application
 }
+
+tasks {
+    jar {
+        enabled = false
+    }
+    bootJar {
+        archiveFileName.set("${project.name}.jar")
+    }
+}
