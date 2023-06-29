@@ -1,0 +1,12 @@
+services:
+  config:
+    build: config
+    ports:
+      - 8888:8888
+  poll:
+    build: poll
+    ports:
+      - 8080:8080
+    depends_on:
+      config:
+        condition: service_healthy

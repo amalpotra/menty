@@ -1,0 +1,10 @@
+services:
+  config:
+    image: ghcr.io/amalpotra/config:main
+  poll:
+    image: ghcr.io/amalpotra/poll:main
+    ports:
+      - 8080:8080
+    depends_on:
+      config:
+        condition: service_healthy
