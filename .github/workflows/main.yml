@@ -49,6 +49,8 @@ jobs:
         include:
           - name: config
             image: ghcr.io/amalpotra/config
+          - name: discovery
+            image: ghcr.io/amalpotra/discovery
           - name: poll
             image: ghcr.io/amalpotra/poll
     steps:
