@@ -1,6 +1,15 @@
 services:
   config:
     image: ghcr.io/amalpotra/config:main
+
+  discovery:
+    image: ghcr.io/amalpotra/discovery:main
+    ports:
+      - 8761:8761
+    depends_on:
+      config:
+        condition: service_healthy
+
   poll:
     image: ghcr.io/amalpotra/poll:main
     ports:
