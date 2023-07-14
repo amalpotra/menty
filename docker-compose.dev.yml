@@ -3,10 +3,7 @@ services:
     build: config
     ports:
       - 8888:8888
+  discovery:
+    build: discovery
   poll:
     build: poll
-    ports:
-      - 8080:8080
-    depends_on:
-      config:
-        condition: service_healthy

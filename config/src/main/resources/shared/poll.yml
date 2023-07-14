@@ -2,3 +2,7 @@ server:
   port: 8080
   servlet:
     context-path: /poll
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
