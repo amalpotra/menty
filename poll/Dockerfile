@@ -4,4 +4,4 @@ WORKDIR /app
 COPY build/libs/poll.jar .
 ENTRYPOINT ["java", "-jar", "poll.jar"]
 
-EXPOSE 8080
+EXPOSE 8762

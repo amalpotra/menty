@@ -48,11 +48,13 @@ jobs:
       matrix:
         include:
           - name: config
-            image: ghcr.io/amalpotra/config
-          - name: discovery
-            image: ghcr.io/amalpotra/discovery
+            image: ghcr.io/amalpotra/menty-config
+          - name: registry
+            image: ghcr.io/amalpotra/menty-registry
+          - name: gateway
+            image: ghcr.io/amalpotra/menty-gateway
           - name: poll
-            image: ghcr.io/amalpotra/poll
+            image: ghcr.io/amalpotra/menty-poll
     steps:
       - name: Checkout
         uses: actions/checkout@v3

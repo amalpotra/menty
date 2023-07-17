@@ -1,9 +1,9 @@
 services:
   config:
     build: config
-    ports:
-      - 8888:8888
-  discovery:
-    build: discovery
+  gateway:
+    build: gateway
+  registry:
+    build: registry
   poll:
     build: poll
