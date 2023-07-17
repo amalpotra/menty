@@ -1,6 +1,6 @@
 spring:
   application:
-    name: poll
+    name: gateway
   config:
     import: configserver:http://config:8888
     fail-fast: true

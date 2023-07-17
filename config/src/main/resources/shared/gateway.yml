@@ -1,0 +1,14 @@
+server:
+  port: 8760
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: poll
+        uri: lb://poll
+        predicates:
+          - Path=/poll/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://registry:8761/eureka/

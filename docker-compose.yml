@@ -1,19 +1,31 @@
 services:
   config:
-    image: ghcr.io/amalpotra/config:main
+    image: ghcr.io/amalpotra/menty-config:main
 
-  discovery:
-    image: ghcr.io/amalpotra/discovery:main
-    ports:
-      - 8761:8761
+  registry:
+    image: ghcr.io/amalpotra/menty-registry:main
+    expose:
+      - 8761
     depends_on:
       config:
         condition: service_healthy
+
+  gateway:
+    image: ghcr.io/amalpotra/menty-gateway:main
+    ports:
+      - 8080:8760
+    depends_on:
+      config:
+        condition: service_healthy
+      registry:
+        condition: service_started
 
   poll:
-    image: ghcr.io/amalpotra/poll:main
-    ports:
-      - 8080:8080
+    image: ghcr.io/amalpotra/menty-poll:main
+    expose:
+      - 8762
     depends_on:
       config:
         condition: service_healthy
+      registry:
+        condition: service_started

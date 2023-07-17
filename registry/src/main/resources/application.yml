@@ -1,8 +1,9 @@
 spring:
   application:
-    name: discovery
+    name: registry
   config:
     import: configserver:http://config:8888
+    fail-fast: true
 eureka:
   client:
     register-with-eureka: false
