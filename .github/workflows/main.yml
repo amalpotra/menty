@@ -22,7 +22,7 @@ jobs:
           java-version: 17
           distribution: temurin
       - name: Build and test with Gradle
-        uses: gradle/gradle-build-action@v2.8.0
+        uses: gradle/gradle-build-action@v2.9.0
         with:
           arguments: |
             build
