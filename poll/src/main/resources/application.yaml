@@ -3,4 +3,3 @@ spring:
     name: poll
   config:
     import: configserver:http://config:8888
-    fail-fast: true
