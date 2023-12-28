@@ -29,3 +29,25 @@ services:
         condition: service_healthy
       registry:
         condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+
+  postgres:
+    image: postgres:16.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:
