@@ -1,21 +1,21 @@
 package com.menty.poll.core.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 
 @Entity
+@Table(name = "options")
+@Getter @Setter @NoArgsConstructor
 public class Option {
     @Id
     @GeneratedValue
-    private long id;
-    @Column(name = "poll_id")
-    private long pollId;
+    private Long id;
     private String title;
     @CreationTimestamp
     @Column(name = "created_at")
@@ -23,4 +23,8 @@ public class Option {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Instant updatedAt;
+
+    public Option(String title) {
+        this.title = title;
+    }
 }
